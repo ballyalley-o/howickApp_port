@@ -1,0 +1,58 @@
+﻿<Window x:Class="xamlcs_howick_res_d.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:xamlcs_howick_res_d.Helper"
+        xmlns:="clr-namespace:xamlcs_howick_res_d.Vie"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        x:Name="Howick"
+        Height="700" 
+        Width="1350"
+        MinWidth="428"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterScreen"
+        Background="Transparent"
+        >
+    
+    <Window.Resources>
+        <BooleanToVisibilityConverter x:Key="BooleanToVisibility" />
+    </Window.Resources>
+
+    <Window.DataContext>
+        <vm:MainViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        
+        <Border Background="#03012c"
+                BorderBrush="#190e4f"
+                BorderThickness="3"
+                CornerRadius="8,8,0,8"
+                />
+        
+        <!--//responsive layout //-->
+
+        <ContentControl Content="{Binding}">
+            <ContentControl.Style>
+                <Style TargetType="ContentControl">
+                    <!--Defaul Layout-->
+                    <Setter Property="ContentTemplate"
+                            Value="{StaticResource Laptop_Layout}" />
+
+                </Style>
+            </ContentControl.Style>
+        </ContentControl>
+        
+        <!--close application button-->
+        <Button 
+                Command="{Binding CloseAppCommand}"
+                CommandParameter="{Binding ElementName=Howick}"
+                Style="{StaticResource CloseAppStyle}" />
+
+
+    </Grid>
+</Window>
