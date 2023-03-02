@@ -14,7 +14,7 @@ namespace xamlcs_howick_res_d.Helper
             double doubleValue = System.Convert.ToDouble(value);
             double compareToValue = System.Convert.ToDouble(parameter);
 
-            return doubleValue < compareToValue ? doubleValue : compareToValue;
+            return doubleValue < compareToValue;
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
@@ -22,13 +22,17 @@ namespace xamlcs_howick_res_d.Helper
             throw new NotImplementedException();
         }
 
+        public static implicit operator IsLessThanConverter(IsGreaterThanConverter v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
     // conv isGreater
 
     public class IsGreaterThanConverter : IValueConverter
     {
-        public static readonly IsLessThanConverter Instance = new IsGreaterThanConverter();
+        public static readonly IValueConverter Instance = new IsGreaterThanConverter();
 
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {

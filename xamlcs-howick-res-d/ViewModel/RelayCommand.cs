@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace ResponsiveApp.ViewModel
+namespace xamlcs_howick_res_d.ViewModel
 {
     public class RelayCommand : ICommand
     {

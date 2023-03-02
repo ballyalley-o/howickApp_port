@@ -1,15 +1,12 @@
-﻿/// <Summary>
-/// Author : R. Arun Mutharasu
-/// Created :25-01-2022
-/// YouTube Channel : C# Design Pro 
-/// </Summary>   
+﻿ 
 
 using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows;
-using xamlcs_howick_res_d;
+using xamlcs_howick_res_d.ViewModel;
 
-namespace ResponsiveApp.ViewModel
+
+namespace xamlcs_howick_res_d.ViewModel
 {
     public class MainViewModel : INotifyPropertyChanged
     {
